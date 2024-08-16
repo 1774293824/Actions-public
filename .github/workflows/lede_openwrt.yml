@@ -46,7 +46,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_U22RL -b master openwrt
+        git clone $REPO_URL -b master openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 加载自定义订阅源
