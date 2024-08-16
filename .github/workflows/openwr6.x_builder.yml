@@ -25,7 +25,6 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         echo -e "$(nproc) 个线程编译"
-        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
         sudo docker image prune --all --force
         echo -e "已完成删除无用文件和docker镜像,运行df -Th 命令:"
         df -Th        
