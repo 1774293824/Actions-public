@@ -24,10 +24,14 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        echo -e "$(nproc) 个线程编译"
+        echo -e "$(nproc) 个线程编译"      
+        echo -e "首次初始化环境完成,运行df -Th 命令:"
+        df -Th                
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL        
+        echo -e "已完成删除无用文件,运行df -Th 命令:"
+        df -Th          
         sudo docker image prune --all --force
-        echo -e "已完成删除无用文件和docker镜像,运行df -Th 命令:"
+        echo -e "已完成删除无用docker镜像,运行df -Th 命令:"
         df -Th        
         sudo -E apt-get -qq update -y
         sudo -E apt-get -qq full-upgrade -y
@@ -42,7 +46,7 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        git clone $REPO_URL -b master openwrt
+        git clone $REPO_U22RL -b master openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 加载自定义订阅源
