@@ -28,10 +28,10 @@ jobs:
         echo -e "首次初始化环境完成,运行df -Th 命令:"
         df -Th                
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL        
-        echo -e "已完成删除无用文件,运行df -Th 命令:"
+        echo -e "首次运行删除无用文件命令,预计清理完成后可用空间为37G.已完成删除无用文件,运行df -Th 命令:"
         df -Th          
         sudo docker image prune --all --force
-        echo -e "已完成删除无用docker镜像,运行df -Th 命令:"
+        echo -e "第二次运行删除无用docker文件命令,预计清理完成后可用空间为40G.已完成删除无用docker镜像,运行df -Th 命令:"
         df -Th        
         sudo -E apt-get -qq update -y
         sudo -E apt-get -qq full-upgrade -y
