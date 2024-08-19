@@ -122,5 +122,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+        tag_name: 'jdcloud_ax_1800_pro_亚瑟'
         body_path: release_notes.txt
         files: ${{ env.FIRMWARE }}/*
