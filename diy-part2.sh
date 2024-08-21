@@ -16,7 +16,7 @@
 # sed -i 's/username='"'"'username'"'"'/username='"'"'403'"'"'/g; s/password='"'"'password'"'"'/password='"'"'8888'"'"'/g' package/base-files/files/bin/config_generate
 
 # 设置wifi加密方式为psk2
-# sed -i 's/encryption=none/encryption=psk2/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 设置密码为88888889
-# sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\\t\t\tset wireless.default_radio${devidx}.key=88888889' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\\t\t\tset wireless.default_radio${devidx}.key=88888889' package/kernel/mac80211/files/lib/wifi/mac80211.sh
