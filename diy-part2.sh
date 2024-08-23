@@ -8,8 +8,6 @@ sed -i 's/192.168.1.1/192.168.68.1/g' package/base-files/files/bin/config_genera
 
 # Modify hostname（设置设备名称）本地编译时在文件的第298行左右
 sed -i 's/OpenWrt/OWrt/g' package/base-files/files/bin/config_generate
-# 设置openclash所在的目录为network
-sed -i 's/services/network/g' feeds/kenzo/luci-app-openclash/luasrc/controller/openclash.lua
 # 设置wan口上网方式为PPPOE
 # sed -i 's/2:-dhcp/2:-pppoe/g' package/base-files/files/lib/functions/uci-defaults.sh
 
