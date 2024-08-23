@@ -2,7 +2,7 @@
 sed -i 's/192.168.1.1/192.168.31.22/g' package/base-files/files/bin/config_generate
 
 # Modify default theme（设置默认主题）
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-argone/g' feeds/luci/collections/luci/Makefile
 # 恢复默认主题
 # sed -i 's/luci-theme-argon/luci-theme-bootstrap/g' feeds/luci/collections/luci/Makefile
 
