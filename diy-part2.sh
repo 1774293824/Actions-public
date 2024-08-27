@@ -13,7 +13,7 @@ sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\\t\t\tset wireles
 
 # 设置无线的国家代码为CN,wifi的默认功率为20
 sed -i 's/country=US/country=CN/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i '/set wireless.radio${devidx}.country=CN/a\\t\t\tset wireless.radio${devidx}.txpower=20' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/set wireless.radio${devidx}.disabled=0/a\\t\t\tset wireless.radio${devidx}.txpower=20' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 设置wan口上网方式为PPPOE，本地编译时在文件的第86行左右
 # sed -i 's/2:-dhcp/2:-pppoe/g' package/base-files/files/lib/functions/uci-defaults.sh
