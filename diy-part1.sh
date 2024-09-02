@@ -8,8 +8,8 @@
 # 这个passwall经测试，用不了
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
-# 大包
+# 大插件包
 # echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
 
-# 小包
+# 小插件包
 echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
