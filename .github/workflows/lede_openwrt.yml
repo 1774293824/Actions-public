@@ -95,6 +95,7 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
         cd openwrt/bin/targets/*/*
+        ll
         rm -rf packages *initramfs-uImage* version.buildinfo *manifest
         echo -e "删除了packages文件夹，再运行 ll 命令:"
         ll
