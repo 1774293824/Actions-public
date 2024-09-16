@@ -27,7 +27,7 @@ PORT3=$(prompt_for_input "请输入 tuic 端口号" '12225')
 CONFIG_FILE="config.json"
 if [ -f "$CONFIG_FILE" ]; then
     echo "替换配置文件中的占位符..."
-    sed -i "s/{{IP}}/$IP/g; s/33333/$PORT1/g; s/44444/$PORT2/g; s/55555/$PORT3/g" "$CONFIG_FILE"
+    sed -i '' "s/{{IP}}/$IP/g; s/33333/$PORT1/g; s/44444/$PORT2/g; s/55555/$PORT3/g" "$CONFIG_FILE"
 else
     echo "配置文件 $CONFIG_FILE 不存在！"
     exit 1
