@@ -15,6 +15,11 @@ wget -O 's-box.zip' 'https://raw.githubusercontent.com/1774293824/Actions-public
 echo "解压 s-box.zip..."
 unzip s-box.zip || exit 1
 
+
+# 打印当前工作目录
+echo "当前工作目录是：$(pwd)"
+echo "当前目录文件有：$(ls)"
+
 # 获取用户输入
 read -p "请输入 IP 地址  : " IP
 read -p "请输入hysteria2端口号 : " PORT1
