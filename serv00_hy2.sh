@@ -52,8 +52,10 @@ screen -dmS box /home/${USERNAME}/sing-box/web run || exit 1
 
 echo "服务已成功启动。要重新附加到屏幕会话，请使用：screen -r box"
 echo "请测试下面的订阅:"
+echo ""
 echo -e "\033[0;32m hysteria2://$UUID@$IP:$PORT1/?sni=www.bing.com&alpn=h3&insecure=1#VeryGood_v11 \033[0m"
-echo ""  # 添加空行
-echo -e "\033[0;32m vless://$UUID@$IP:$PORT2?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.ups.com&fp=chrome&pbk=SxBMcWxdxYBAh_IUSsiCDk6UHIf1NA1O8hUZ2hbRTFE&type=tcp&headerType=none \033[0m"
-echo ""  # 添加空行
-echo -e "\033[0;32m tuic://$UUID:password123@$IP:$PORT3?sni=www.bing.com&alpn=h3&congestion_control=bbr \033[0m"
+echo ""
+echo -e "\033[0;32m vless://$UUID@$IP:$PORT2?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.ups.com&fp=chrome&pbk=SxBMcWxdxYBAh_IUSsiCDk6UHIf1NA1O8hUZ2hbRTFE&type=tcp&headerType=none#VeryGood_v11 \033[0m"
+echo ""
+echo -e "\033[0;32m tuic://$UUID:password123@$IP:$PORT3?sni=www.bing.com&alpn=h3&congestion_control=bbr#VeryGood_v11 \033[0m"
+echo ""
