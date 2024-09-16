@@ -1,14 +1,17 @@
-# 下载脚本
+# 1、下载脚本
 ```
 wget -O serv00-install-hy2.sh https://raw.githubusercontent.com/1774293824/Sing-box/main/serv00-install-hy2.sh
-```
-# 或
+```或
 ```
 curl -fsSL https://raw.githubusercontent.com/1774293824/Sing-box/main/serv00-install-hy2.sh -o serv00-install-hy2.sh
 ```
-# 运行脚本
+# 2、运行脚本
 ```
 chmod +x serv00-install-hy2.sh && ./serv00-install-hy2.sh
+```
+# 一件安装运行
+```
+bash <(curl -Ls https://raw.githubusercontent.com/1774293824/Sing-box/main/serv00-install-hy2.sh)
 ```
 
 # 适用于jdcloud_ax1800_pro亚瑟的固件
