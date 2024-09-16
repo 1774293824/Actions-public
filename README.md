@@ -1,6 +1,6 @@
 # 1、下载脚本
 ```
-wget -O serv00-install-hy2.sh https://raw.githubusercontent.com/1774293824/Sing-box/main/serv00-install-hy2.sh
+wget -O https://raw.githubusercontent.com/1774293824/Actions-public/main/serv00_hy2.sh
 ```
 或
 ```
