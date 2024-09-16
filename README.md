@@ -1,7 +1,8 @@
 # 1、下载脚本
 ```
 wget -O serv00-install-hy2.sh https://raw.githubusercontent.com/1774293824/Sing-box/main/serv00-install-hy2.sh
-```或
+```
+或
 ```
 curl -fsSL https://raw.githubusercontent.com/1774293824/Sing-box/main/serv00-install-hy2.sh -o serv00-install-hy2.sh
 ```
