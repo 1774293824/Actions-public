@@ -8,7 +8,7 @@ curl -fsSL https://raw.githubusercontent.com/1774293824/Sing-box/main/serv00-ins
 ```
 # 2、运行脚本
 ```
-chmod +x serv00-install-hy2.sh && ./serv00-install-hy2.sh
+chmod +x serv00_hy2.sh && ./serv00_hy2.sh
 ```
 # 一件安装运行
 ```
