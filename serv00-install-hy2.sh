@@ -58,3 +58,4 @@ screen -dmS box /home/${USERNAME}/sing-box/web run || exit 1
 echo "服务已成功启动。要重新附加到屏幕会话，请使用：screen -r box"
 echo "请测试下面的订阅:"
 echo "hysteria2://$UUID@$IP:$PORT1/?sni=www.bing.com&alpn=h3&insecure=1#VeryGood_v11"
+echo -e "\033[0;32m hysteria2://$UUID@$IP:$PORT1/?sni=www.bing.com&alpn=h3&insecure=1#VeryGood_v11 \033[0m"
