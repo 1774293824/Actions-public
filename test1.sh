@@ -263,21 +263,53 @@ EOF
 }
 
 download_singbox() {
-  ARCH=$(uname -m) && FILE_INFO=()
+  ARCH=$(uname -m)
+  DOWNLOAD_DIR="."  # 设置下载目录，你可以修改为实际需要的路径
+  mkdir -p "$DOWNLOAD_DIR"  # 创建目录如果不存在
+
+  # 根据架构设置文件下载链接
   if [ "$ARCH" == "arm" ] || [ "$ARCH" == "arm64" ] || [ "$ARCH" == "aarch64" ]; then
-      FILE_INFO=($(wget -qO- https://api.github.com/repos/SagerNet/singbox/releases/latest | grep "browser_download_url" | grep "arm" | awk -F '"' '{print $4}'))
-      if [[ ${#FILE_INFO[@]} -lt 1 ]]; then
-          red "ARM64 not found, use x86_64"
-          FILE_INFO=($(wget -qO- https://api.github.com/repos/SagerNet/singbox/releases/latest | grep "browser_download_url" | grep "x86_64" | awk -F '"' '{print $4}'))
-      fi
+      FILE_INFO=(
+        "https://github.com/eooce/test/releases/download/arm64/sb sb"
+        "https://github.com/eooce/test/releases/download/arm64/bot13 bot"
+        "https://github.com/eooce/test/releases/download/ARM/swith npm"
+      )
+  elif [ "$ARCH" == "amd64" ] || [ "$ARCH" == "x86_64" ] || [ "$ARCH" == "x86" ]; then
+      FILE_INFO=(
+        "https://github.com/eooce/test/releases/download/freebsd/sb sb"
+        "https://github.com/eooce/test/releases/download/freebsd/server bot"
+        "https://github.com/eooce/test/releases/download/freebsd/npm npm"
+      )
   else
-      FILE_INFO=($(wget -qO- https://api.github.com/repos/SagerNet/singbox/releases/latest | grep "browser_download_url" | grep "x86_64" | awk -F '"' '{print $4}'))
+      echo "Unsupported architecture: $ARCH"
+      exit 1
   fi
 
-  for url in ${FILE_INFO[@]}; do
-    wget -q -O "$DOWNLOAD_DIR/singbox" "$url"
+  # 下载文件
+  for entry in "${FILE_INFO[@]}"; do
+    URL=$(echo "$entry" | cut -d ' ' -f 1)
+    FILENAME=$(echo "$entry" | cut -d ' ' -f 2)
+    DEST="$DOWNLOAD_DIR/$FILENAME"
+    
+    echo "Downloading $URL to $DEST"
+
+    # 使用 curl 进行下载，使用 -L 选项跟随重定向
+    curl -L -o "$DEST" "$URL"
+
+    # 检查下载是否成功
+    if [ $? -eq 0 ]; then
+      echo "Download successful: $DEST"
+    else
+      echo "Download failed: $DEST"
+    fi
   done
+
+  # 设置下载文件的执行权限
+  chmod +x "$DOWNLOAD_DIR/sb" "$DOWNLOAD_DIR/bot" "$DOWNLOAD_DIR/npm"
+
+  echo "All files downloaded and permissions set."
 }
+
 
 download_singbox
 
