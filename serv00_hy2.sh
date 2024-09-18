@@ -39,7 +39,7 @@ chmod 755 box
 
 # 启动服务
 echo "启动服务..."
-screen -dmS box /home/${USERNAME}//box run
+screen -dmS box /home/${USERNAME}/sing-box run
 
 echo "服务已成功启动。要重新附加到屏幕会话，请使用：screen -r box"
 echo "请测试下面的订阅:"
