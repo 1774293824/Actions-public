@@ -48,5 +48,5 @@ echo -e "\033[0;32m hysteria2://$UUID@$IP:$PORT1/?sni=www.bing.com&alpn=h3&insec
 echo ""
 echo -e "\033[0;32m vless://$UUID@$IP:$PORT2?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.ups.com&fp=chrome&pbk=SxBMcWxdxYBAh_IUSsiCDk6UHIf1NA1O8hUZ2hbRTFE&type=tcp&headerType=none#${USERNAME} \033[0m"
 echo ""
-echo -e "\033[0;32m tuic://$UUID:password123@$IP:$PORT3?sni=www.bing.com&alpn=h3&congestion_control=bbr#${USERNAME} \033[0m"
+echo -e "\033[0;32m tuic://$UUID:admin123@$IP:$PORT3?sni=www.bing.com&alpn=h3&congestion_control=bbr#${USERNAME} \033[0m"
 echo ""
