@@ -8,7 +8,7 @@ mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
 
 # 下载并解压缩文件
 echo "下载 s-box.zip..."
-wget -O 's-box.zip' 'https://raw.githubusercontent.com/1774293824/Actions-public/main/sing-box.zip' && unzip sing-box.zip
+wget -O 's-box.zip' 'https://raw.githubusercontent.com/1774293824/Actions-public/main/sing-box.zip' && unzip s-box.zip
 
 # 获取用户输入的函数
 prompt_for_input() {
@@ -39,7 +39,7 @@ chmod 755 box
 
 # 启动服务
 echo "启动服务..."
-screen -dmS box /home/${USERNAME}/sing-box/box run
+screen -dmS box /home/${USERNAME}//box run
 
 echo "服务已成功启动。要重新附加到屏幕会话，请使用：screen -r box"
 echo "请测试下面的订阅:"
