@@ -19,6 +19,7 @@ dns:
 
 proxies:
     - {name: 's11_wolfsir',server: 31.186.87.205,port: 63033,udp: true,skip-cert-verify: true,sni: www.microsoft.com,type: hysteria2,password: bc97f674-c578-4940-9234-0a1da46041b9}
+    - {name: 's12_wolfsiryy',server: 213.189.53.91,port: 56659,udp: true,skip-cert-verify: true,sni: www.microsoft.com,type: hysteria2,password: 816fb5d4-7417-40e0-b6bb-544551a150cd}
     - {name: '极速机场',server: 108.181.24.53,port: 50000,udp: true,skip-cert-verify: true,sni: www.microsoft.com,type: hysteria2,password: cac68e5a-b54a-48c2-b60b-3fb57c73d79d }
 
 proxy-groups:
