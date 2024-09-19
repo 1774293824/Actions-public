@@ -39,9 +39,7 @@ chmod 755 sb
 # 启动服务
 echo "启动服务..."
 screen -dmS box /home/${USERNAME}/sing-box/sb run
-echo "启动服务: successful \t 测试数据"
-echo "服务已成功启动。要重新附加到屏幕会话，请使用：screen -r box"
-echo "请测试下面的订阅:"
+echo "启动服务: successful\n服务已成功启动。要重新附加到屏幕会话，请使用：screen -r box\n请测试下面的订阅:"
 echo ""
 echo -e "\033[0;32m hysteria2://$UUID@$IP:$PORT1/?sni=www.bing.com&alpn=h3&insecure=1#${USERNAME} \033[0m"
 echo ""
