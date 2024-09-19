@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-export UUID=${UUID:-'b135e09a-6c52-43a4-a1db-4297944b02ef'} 
+export UUID=${UUID:-'a03e977f-6491-42a2-b56d-abbab6c3a9ac'} 
 USERNAME=$(whoami)
 
 WORK_DIR="./sing-box"
