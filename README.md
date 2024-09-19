@@ -2,6 +2,9 @@
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/1774293824/Actions-public/main/serv00_hy2.sh)
 ```
+# 后续运行使用下面的命令
+```
+screen -dmS box /home/wolfsir/sing-box/sb run```
 
 # 适用于jdcloud_ax1800_pro亚瑟的固件
 1. 支持定制wan口ip
