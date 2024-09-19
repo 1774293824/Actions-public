@@ -5,15 +5,13 @@ mode: rule
 log-level: info
 external-controller: '127.0.0.1:9090'
 
-
 dns:
     enable: true
     ipv6: false
-    listen: '0.0.0.0:1053'
+    use-hosts: true
     enhanced-mode: fake-ip
     fake-ip-range: 198.18.0.1/16
-    use-hosts: true
-    default-nameserver: [223.5.5.5]
+    default-nameserver: [223.5.5.5,119.29.29.29]	
     nameserver: ['https://doh.pub/dns-query']
     fake-ip-filter: ['*.lan', localhost.ptlogin2.qq.com, dns.msftncsi.com, '*.srv.nintendo.net', '*.stun.playstation.net', 'xbox.*.microsoft.com', '*.xboxlive.com']
     fallback: [1.1.1.1, 8.8.8.8]
@@ -40,7 +38,6 @@ rules:
     - 'DOMAIN,safebrowsing.googleapis.com,DIRECT'
     - 'DOMAIN,developer.apple.com,serv00'
     - 'DOMAIN-SUFFIX,digicert.com,serv00'
-
     - 'DOMAIN,ocsp.comodoca.com,serv00'
     - 'DOMAIN,ocsp.usertrust.com,serv00'
     - 'DOMAIN,ocsp.sectigo.com,serv00'
@@ -246,7 +243,6 @@ rules:
     - 'DOMAIN-SUFFIX,awsstatic.com,serv00'
     - 'DOMAIN-SUFFIX,azureedge.net,serv00'
     - 'DOMAIN-SUFFIX,azurewebsites.net,serv00'
-
     - 'DOMAIN-SUFFIX,bintray.com,serv00'
     - 'DOMAIN-SUFFIX,bit.com,serv00'
     - 'DOMAIN-SUFFIX,bit.ly,serv00'
