@@ -19,9 +19,9 @@ prompt_for_input() {
 }
 
 IP=$(prompt_for_input "请输入 IP地址" '31.186.87.205')
-PORT1=$(prompt_for_input "请输入 hysteria2 端口号" '21382')
-PORT2=$(prompt_for_input "请输入 vless 端口号" '23517')
-PORT3=$(prompt_for_input "请输入 tuic 端口号" '12225')
+PORT1=$(prompt_for_input "请输入 hysteria2的udp端口号" '21382')
+PORT2=$(prompt_for_input "请输入 vless的tcp端口号" '23517')
+PORT3=$(prompt_for_input "请输入 tuic的udp端口号" '12225')
 
 # 替换配置文件中的占位符
 CONFIG_FILE="config.json"
