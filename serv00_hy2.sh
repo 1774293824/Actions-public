@@ -20,7 +20,7 @@ prompt_for_input() {
 
 IP=$(prompt_for_input "请输入 IP地址" '128.204.223.118')
 PORT1=$(prompt_for_input "请输入 hysteria2的udp端口号" '21382')
-PORT2=$(prompt_for_input "请输入 tuic的udp端口号" '23517')
+PORT2=$(prompt_for_input "请输入 tuic的udp端口号" '12225')
 
 # 替换配置文件中的占位符
 CONFIG_FILE="config.json"
