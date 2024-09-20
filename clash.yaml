@@ -18,8 +18,8 @@ dns:
     fallback-filter: { geoip: true, geoip-code: CN, ipcidr: [240.0.0.0/4] }
 
 proxies:
-    - { name: serv_11, server: 128.204.223.118, port: 21382, ports: 20000-50000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: a03e977f-6491-42a2-b56d-abbab6c3a9ac}
-    - { name: serv_12, server: 85.194.246.115, port: 56659, ports: 50000-60000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: a03e977f-6491-42a2-b56d-abbab6c3a9ac}
+    - { name: serv_11, server: 128.204.223.118, port: 21382, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: a03e977f-6491-42a2-b56d-abbab6c3a9ac}
+    - { name: serv_12, server: 85.194.246.115, port: 56659, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: a03e977f-6491-42a2-b56d-abbab6c3a9ac}
     - { name: 🇺🇸美国洛杉矶1号, server: 108.181.24.53, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: cac68e5a-b54a-48c2-b60b-3fb57c73d79d }
     - { name: 🇺🇸美国洛杉矶2号, server: 108.181.23.123, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: cac68e5a-b54a-48c2-b60b-3fb57c73d79d }
     - { name: 🇺🇸美国洛杉矶3号, server: 108.181.23.231, port: 50000, ports: 50000-53000, mport: 50000-53000, udp: true, skip-cert-verify: true, sni: www.microsoft.com, type: hysteria2, password: cac68e5a-b54a-48c2-b60b-3fb57c73d79d }
