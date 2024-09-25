@@ -541,4 +541,4 @@ rules:
     - 'IP-CIDR,224.0.0.0/4,DIRECT'
     - 'IP-CIDR6,fe80::/10,DIRECT'
     - 'GEOIP,CN,DIRECT'
-    - 'MATCH,REJECT'
+    - 'MATCH,DIRECT'
