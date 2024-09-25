@@ -1,4 +1,4 @@
-# 一件安装运行
+# serv00一键安装运行sing-box
 ```
 bash <(curl -Ls https://raw.githubusercontent.com/1774293824/Actions-public/main/serv00_hy2.sh)
 ```
