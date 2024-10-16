@@ -1,4 +1,4 @@
-name: Auto-Clean
+name: Clean-tags
 
 on:
   #自动清理：每天早上3点
