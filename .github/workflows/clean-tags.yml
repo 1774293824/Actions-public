@@ -1,0 +1,30 @@
+name: Auto-Clean
+
+on:
+  #自动清理：每天早上3点
+  # schedule:
+    # - cron: 0 19 * * *
+  #手动清理
+  workflow_dispatch:
+    inputs:
+      NUMBER:
+        default: '10'
+        type: string
+
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+permissions: write-all
+
+jobs:
+  auto_clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Old Releases
+      - uses: dev-drprasad/delete-older-releases@v0.3.4
+        with:
+          repo: <owner>/<repoName> # defaults to current repo
+          keep_latest: 3
+          delete_tag_pattern: ""
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
