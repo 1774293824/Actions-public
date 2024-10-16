@@ -6,15 +6,6 @@ on:
     # - cron: 0 19 * * *
   #手动清理
   workflow_dispatch:
-    inputs:
-      NUMBER:
-        default: '10'
-        type: string
-
-env:
-  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-permissions: write-all
 
 jobs:
   auto_clean:
