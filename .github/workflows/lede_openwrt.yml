@@ -7,7 +7,7 @@ on:
         default: '用户未填写'
 # coolsnowwolf
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/1774293824/lede
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
