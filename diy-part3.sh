@@ -1,3 +1,5 @@
+# x86 = amd64
+# linux = arm64
 mkdir -p files/etc/openclash/core
 
 CLASH_META_URL="https://raw.githubusercontent.com/1774293824/Actions-public/main/clash.meta-linux-arm64-v1.16.0.gz"
