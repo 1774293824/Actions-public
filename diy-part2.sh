@@ -4,6 +4,12 @@
 # Modify default IP（修改wan口IP）本地编译时在文件的第150行左右
 sed -i 's/192.168.1.1/192.168.68.1/g' package/base-files/files/bin/config_generate
 
+# 更新为root用户的默认密码为【admin】
+sed -i 's|root:::0:99999:7:::|root:$1$ZrdSUj0o$MjkG92YkikpJJ4LHXI8uT1:20013:0:99999:7:::|g' package/base-files/files/etc/shadow
+# 可选密码
+# root:$1$ZrdSUj0o$MjkG92YkikpJJ4LHXI8uT1:20013:0:99999:7:::【admin】
+# root:$1$d.4wFNEh$eGr/CydIez04zsnfDdqPa0:20013:0:99999:7:::【root】
+
 # Modify hostname（设置设备名称）本地编译时在文件的第298行左右
 sed -i 's/OpenWrt/OWrt/g' package/base-files/files/bin/config_generate
 
