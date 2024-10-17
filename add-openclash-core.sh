@@ -1,6 +1,6 @@
 mkdir -p files/etc/openclash/core
 
-CLASH_META_URL="https://raw.githubusercontent.com/1774293824/Actions-public/main/clash.meta-linux-amd64-v1.16.0.gz"
+CLASH_META_URL="https://raw.githubusercontent.com/1774293824/Actions-public/main/clash.meta-linux-arm64-v1.16.0.gz"
 GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
 GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
 
