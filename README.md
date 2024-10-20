@@ -1,11 +1,12 @@
 
 # 适用于jdcloud_ax1800_pro亚瑟的固件
+   默认插件argon-config\easymesh\guest-wifi\openclash\ttyd\samba4
+
 1. 支持定制wan口ip
 2. 支持定制设备名称
 3. 支持定制wan口上网方式为pppoe
 4. 支持定制wifi默认密码
 5. 支持定制wifi所属国家，默认为“country=CN”
-默认插件argon-config\easymesh\guest-wifi\openclash\ttyd\samba4
 ## 注意
 1. 修改默认联网方式仅需要修改diy2.sh中内容即可
 2. 配置其他型号，仅需要修改.config即可
