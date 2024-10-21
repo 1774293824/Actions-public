@@ -55,7 +55,6 @@ jobs:
       run: |
         chmod +x $DIY_P1_SH
         cd openwrt
-        git checkout 02c176caaf18d26ca1755f3a2d190582f3bb248d
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 更新feeds订阅源
