@@ -2,16 +2,19 @@ name: upload-release
 
 on:
   workflow_dispatch:
-  
+
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@main
+
     - name: 上传固件到release
       uses: softprops/action-gh-release@master
       with:
         tag_name: "tag_name"
         body_path: "body_path"
-        files: "clash.meta-linux-amd64-v1.16.0.gz"
+        files: "./clash.meta-linux-amd64-v1.16.0.gz"  # 确保文件路径正确
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
