@@ -1,20 +1,17 @@
-name: Clean-tags
+name: upload-release
 
 on:
-  # 自动清理：每天早上3点
-  # schedule:
-    # - cron: 0 19 * * *
-  # 手动清理
   workflow_dispatch:
-
+  
 jobs:
-  auto_clean:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Delete Old Releases
-        uses: dev-drprasad/delete-older-releases@v0.3.4
-        with:
-          keep_latest: 3
-          delete_tag_pattern: ""
+    - name: 上传固件到release
+      uses: softprops/action-gh-release@master
+      with:
+        tag_name: "tag_name"
+        body_path: "body_path"
+        files: "clash.meta-linux-amd64-v1.16.0.gz"
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
