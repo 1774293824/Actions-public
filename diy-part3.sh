@@ -1,5 +1,8 @@
-# x86 = amd64
-# linux = arm64
+# 说明：diy-part3文件的作用是 编译带openclash的固件时，为固件自动带上meta内核。如果没有选择openclash编译，则请把diy3中内容全部注释
+
+# x86固件架构 = amd64
+# 京东云亚瑟固件架构（linux） = arm64
+
 mkdir -p files/etc/openclash/core
 
 CLASH_META_URL="https://raw.githubusercontent.com/1774293824/Actions-public/main/clash.meta-linux-arm64-v1.16.0.gz"
