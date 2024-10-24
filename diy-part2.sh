@@ -4,8 +4,8 @@
 # Modify default IP（修改wan口IP）本地编译时在文件的第150行左右
 sed -i 's/192.168.1.1/192.168.68.1/g' package/base-files/files/bin/config_generate
 
-新版LUCI的ip修改地址
-# sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/luci2/bin/config_generate
+# 新版LUCI的ip修改地址
+sed -i 's/192.168.1.1/192.168.68.1/g' package/base-files/luci2/bin/config_generate
 
 # 更新为root用户的默认密码为【admin】
 sed -i 's|root:::0:99999:7:::|root:$1$ZrdSUj0o$MjkG92YkikpJJ4LHXI8uT1:20013:0:99999:7:::|g' package/base-files/files/etc/shadow
