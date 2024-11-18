@@ -49,13 +49,13 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b master openwrt
-        git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 加载自定义订阅源
       run: |
         chmod +x $DIY_P1_SH
         cd openwrt
+        git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 更新feeds订阅源
