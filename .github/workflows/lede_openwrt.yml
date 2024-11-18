@@ -7,7 +7,7 @@ on:
         default: '用户未填写'
 # coolsnowwolf
 env:
-  REPO_URL: https://github.com/1774293824/lede
+  REPO_URL: https://github.com/coolsnowwolf/lede
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
@@ -49,6 +49,7 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b master openwrt
+        git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 加载自定义订阅源
