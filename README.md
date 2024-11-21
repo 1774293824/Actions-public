@@ -1,7 +1,3 @@
-
-# 适用于jdcloud_ax1800_pro亚瑟的固件
-   默认插件argon-config\easymesh\guest-wifi\openclash\ttyd\samba4
-
 1. 支持定制wan口ip
 2. 支持定制设备名称
 3. 支持定制wan口上网方式为pppoe
