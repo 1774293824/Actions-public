@@ -24,6 +24,10 @@ sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wi
 sed -i 's/country=US/country=CN/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '/set wireless.radio${devidx}.disabled=0/a\\t\t\tset wireless.radio${devidx}.txpower=20' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
+# 设置5Gwifi名为Owrt
+sed -i "/uci commit luci/a uci set wireless.default_radio0.ssid='OWrt'\nuci commit wireless\nwifi reload" package/lean/default-settings/files/zzz-default-settings
+
+
 # 设置wan口上网方式为PPPOE，本地编译时在文件的第86行左右
 # sed -i 's/2:-dhcp/2:-pppoe/g' package/base-files/files/lib/functions/uci-defaults.sh
 # 设置PPPOE上网的账号和密码,本地编译时在文件的第182和183行左右
