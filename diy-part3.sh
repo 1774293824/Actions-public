@@ -4,7 +4,7 @@
 # 京东云亚瑟固件架构（linux） = arm64
 
 mkdir -p files/etc/openclash/core
-CLASH_META_URL="https://raw.githubusercontent.com/1774293824/Github_files/main/mihomo-linux-arm64-v1.18.10.gz"
+CLASH_META_URL="https://raw.githubusercontent.com/1774293824/Github_files/main/mihomo-linux-arm64-v1.19.0.gz"
 # GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
 # GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
 
