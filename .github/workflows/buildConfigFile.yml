@@ -61,7 +61,7 @@ jobs:
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
       
     - name: 开启SSH链接
-      uses: 1774293824/ssh2actions@main
+      uses: P3TERX/ssh2actions@main
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
