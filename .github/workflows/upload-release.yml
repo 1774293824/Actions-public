@@ -14,6 +14,6 @@ jobs:
       uses: softprops/action-gh-release@master
       with:
         tag_name: "tag_name"
-        files: "./clash.meta-linux-amd64-v1.16.0.gz"  # 确保文件路径正确
+        files: "./redis-desktop-manager-0.9.3.817.exe"  # 确保文件路径正确
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
