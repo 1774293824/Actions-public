@@ -58,11 +58,11 @@ jobs:
         git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
         $GITHUB_WORKSPACE/$DIY_P1_SH
         
-    - name: Start SSH via tmate
-      uses: P3TERX/ssh2actions@main
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+#    # - name: Start SSH via tmate
+#    #   uses: P3TERX/ssh2actions@main
+#    #   env:
+#    #     TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+#    #     TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         
     - name: 更新feeds订阅源
       run: cd openwrt && ./scripts/feeds update -a
