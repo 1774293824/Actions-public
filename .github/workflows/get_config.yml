@@ -72,12 +72,13 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         
-
-    - name: 上传 seed.config 至 Actions 下载页
-      uses: actions/upload-artifact@main
+    - name: 导出seed.config
       run: |
         cd openwrt && ./scripts/diffconfig.sh > seed.config
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV      
+        echo "FIRMWARE=$PWD" >> $GITHUB_ENV  
+        
+    - name: 上传 seed.config 至 Actions 下载页
+      uses: actions/upload-artifact@main
       with:
         name: "seed.config"
-        path: ${{ env.FIRMWARE }}/seed.config  # 我想在这里上传 openwrt/seed.config 文件，帮我看看这里写的对不对
+        path: ${{ env.FIRMWARE }}/seed.config
