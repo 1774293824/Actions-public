@@ -1,6 +1,7 @@
-name: SSH连接以构建seed.config
+name: SSH连接以创建.config文件
 on:
   workflow_dispatch:
+
 # coolsnowwolf
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -8,9 +9,6 @@ env:
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   DIY_P3_SH: diy-part3.sh
-
-  UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: true
 
 jobs:
   build:
