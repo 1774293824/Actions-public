@@ -1,4 +1,4 @@
-name: SSH连接以创建.config文件
+name: SSH连接以构建seed.config
 on:
   workflow_dispatch:
 # coolsnowwolf
