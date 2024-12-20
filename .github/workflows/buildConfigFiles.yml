@@ -1,4 +1,4 @@
-name: SSH连接并生产.config文件
+name: SSH连接以创建.config文件
 on:
   workflow_dispatch:
 # coolsnowwolf
@@ -67,13 +67,13 @@ jobs:
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        
+    
+    - name: 生成seed.config文件
+      run: |
+        cd openwrt && ./scripts/diffconfig.sh > seed.config
 
     - name: 上传 seed.config 至 Actions 下载页
       uses: actions/upload-artifact@main
-      run: |
-        cd openwrt && ./scripts/diffconfig.sh > seed.config
-        echo "FIRMWARE=$PWD" >> $GITHUB_ENV      
       with:
         name: "seed.config"
-        path: ${{ env.FIRMWARE }}/seed.config  # 我想在这里上传 openwrt/seed.config 文件，帮我看看这里写的对不对
+        path: ${{ env.FIRMWARE }}/seed.config
