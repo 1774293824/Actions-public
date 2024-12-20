@@ -1,4 +1,4 @@
-name: 编译lede源码
+name: SSH连接以创建.config文件
 on:
   workflow_dispatch:
     inputs:
