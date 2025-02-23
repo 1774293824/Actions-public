@@ -3,6 +3,8 @@ on:
   workflow_dispatch:
 
 # coolsnowwolf
+#         git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
+
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   CONFIG_FILE: .config
@@ -44,7 +46,6 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b master openwrt
         cd openwrt
-        git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: 加载自定义订阅源 # git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
