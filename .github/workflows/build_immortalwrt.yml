@@ -8,7 +8,7 @@ on:
 
 # coolsnowwolf
 env:
-  REPO_URL: git clone https://github.com/hanwckf/immortalwrt-mt798x
+  REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
