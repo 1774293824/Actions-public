@@ -1,4 +1,4 @@
-name: 0321测试 SSH连接以创建.config文件
+name: 测试openwrt-6.x进行SSH连接以创建.config文件
 on:
   workflow_dispatch:
 
