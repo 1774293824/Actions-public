@@ -1,0 +1,80 @@
+name: SSH连接以创建旧版.config文件
+on:
+  workflow_dispatch:
+
+# coolsnowwolf
+#         git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
+
+env:
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  CONFIG_FILE: .config
+  DIY_P1_SH: diy-part1.sh
+  DIY_P2_SH: diy-part2.sh
+  DIY_P3_SH: diy-part3.sh
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: 检出源码到workflows
+      uses: actions/checkout@main
+    - name: 初始化环境
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        echo -e "$(nproc) 个核心编译"      
+        echo -e "首次初始化success,运行"df -Th"命令以查看当前服务器存储情况:"
+        df -Th                
+        sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL        
+        echo -e "删除Actions服务器无用文件,预计清理完成后可用空间为37G.已完成删除无用文件,运行df -Th 命令:"
+        df -Th          
+        sudo docker image prune --all --force
+        echo -e "删除无用docker文件命令,预计清理完成后可用空间为40G.已完成删除无用docker镜像,运行df -Th 命令:"
+        df -Th        
+        sudo -E apt-get -qq update -y
+        sudo -E apt-get -qq full-upgrade -y
+        sudo -E apt-get -qq install ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache clang cmake cpio curl device-tree-compiler flex gawk gettext gcc-multilib g++-multilib git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libfuse-dev libglib2.0-dev libgmp3-dev libltdl-dev libmpc-dev libmpfr-dev libncurses-dev libncurses-dev libpython3-dev libreadline-dev libssl-dev libtool llvm lrzsz genisoimage msmtp ninja-build p7zip p7zip-full patch pkgconf python3 python3-pyelftools python3-setuptools qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip vim wget xmlto xxd zlib1g-dev
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
+        sudo timedatectl set-timezone "Asia/Shanghai"
+        sudo mkdir -p /workdir
+        sudo chown $USER:$GROUPS /workdir
+
+    - name: 克隆源代码并切换到特定 commit
+      working-directory: /workdir
+      run: |
+        df -hT $PWD
+        git clone $REPO_URL -b master openwrt
+        cd openwrt
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+
+    - name: 加载自定义订阅源 # git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
+      run: |
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
+        $GITHUB_WORKSPACE/$DIY_P1_SH
+           
+    - name: 更新feeds订阅源
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: 安装feeds订阅源
+      run: |
+        cd openwrt && ./scripts/feeds install -a
+        echo "FIRMWARE=$PWD" >> $GITHUB_ENV
+      
+    - name: 开启SSH链接
+      uses: P3TERX/ssh2actions@main
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    
+    - name: 生成seed.config文件
+      run: |
+        cd openwrt && ./scripts/diffconfig.sh > seed.config
+
+    - name: 上传 seed.config 至 Actions 下载页
+      uses: actions/upload-artifact@main
+      with:
+        name: "seed.config"
+        path: ${{ env.FIRMWARE }}/seed.config
