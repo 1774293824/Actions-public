@@ -52,6 +52,7 @@ jobs:
       run: |
         chmod +x $DIY_P1_SH
         cd openwrt
+        
         $GITHUB_WORKSPACE/$DIY_P1_SH
            
     - name: 更新feeds订阅源
