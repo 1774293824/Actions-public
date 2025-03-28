@@ -6,12 +6,13 @@
 mkdir -p files/etc/openclash/core
 
 # CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/mihomo-linux-arm64-v1.19.0.gz"
+# wget -qO- $CLASH_META_URL | gunzip -c > files/etc/openclash/core/clash_meta
 
 CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/clash-linux-arm64.tar.gz"
+wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
+
 # GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
 # GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
-
-wget -qO- $CLASH_META_URL | gunzip -c > files/etc/openclash/core/clash_meta
 # wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
 # wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
 
