@@ -5,8 +5,9 @@
 
 mkdir -p files/etc/openclash/core
 
-CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/mihomo-linux-arm64-v1.19.0.gz"
-#CLASH_META_URL="https://github.com/vernesong/OpenClash/blob/core/master/meta/clash-linux-arm64.tar.gz"
+# CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/mihomo-linux-arm64-v1.19.0.gz"
+
+CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/clash-linux-arm64.tar.gz"
 # GEOIP_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat"
 # GEOSITE_URL="https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
 
