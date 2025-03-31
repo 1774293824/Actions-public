@@ -2,9 +2,6 @@ name: SSH连接以创建.config文件
 on:
   workflow_dispatch:
 
-# coolsnowwolf
-#         git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
-
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   CONFIG_FILE: .config
