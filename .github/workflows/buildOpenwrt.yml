@@ -65,11 +65,11 @@ jobs:
     - name: 安装feeds订阅源
       run: cd openwrt && ./scripts/feeds install -a
       
-    - name: Start SSH via tmate
-      uses: P3TERX/ssh2actions@main
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+# - name: Start SSH via tmate
+#   uses: P3TERX/ssh2actions@main
+#   env:
+#     TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+#     TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         
     - name: 加载自定义配置的.sh文件
       run: |
