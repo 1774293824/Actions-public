@@ -1,4 +1,4 @@
-name: SSH连接以创建.config文件
+name: SSH连接,创建最新 .config 文件
 on:
   workflow_dispatch:
 
@@ -45,7 +45,7 @@ jobs:
         cd openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-    - name: 加载自定义订阅源 # git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30
+    - name: 加载自定义订阅源
       run: |
         chmod +x $DIY_P1_SH
         cd openwrt
