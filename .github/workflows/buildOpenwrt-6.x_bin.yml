@@ -5,6 +5,9 @@ on:
       open_ssh:
         description: '是否开启SSH, 1 = 开'
         default: '1'
+      release_notes:
+        description: '此处输入release发行说明:'
+        default: '用户未填写'
 
 env:
   REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x.git
