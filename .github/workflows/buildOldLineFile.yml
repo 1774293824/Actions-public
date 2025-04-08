@@ -1,6 +1,10 @@
 name: SSH连接以创建旧版.config文件
 on:
   workflow_dispatch:
+    inputs:
+      open_ssh:
+        description: '是否开启SSH, 1 = 开'
+        default: '1'
 
 # coolsnowwolf
 #         git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30 （2024-09-30）
@@ -59,7 +63,8 @@ jobs:
         cd openwrt && ./scripts/feeds install -a
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
       
-    - name: 开启SSH链接
+    - name: 使用SSH连接
+      if: ${{ github.event.inputs.open_ssh == '1' && !cancelled() }}
       uses: P3TERX/ssh2actions@main
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
