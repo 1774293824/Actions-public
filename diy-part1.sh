@@ -5,7 +5,7 @@
 # echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 
 # 大插件包,包含了上面的“kenzo”和“small”
-echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
+# echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
 
 # echo 'src-git kenzo https://github.com/1774293824/openwrt-packages' >>feeds.conf.default
 
