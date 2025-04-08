@@ -58,13 +58,7 @@ jobs:
         cd openwrt
         git checkout 36c00a420926fa06a0d02d52badfbb5fd43e1762
         $GITHUB_WORKSPACE/$DIY_P1_SH
-        
-#    # - name: Start SSH via tmate
-#    #   uses: P3TERX/ssh2actions@main
-#    #   env:
-#    #     TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-#    #     TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        
+
     - name: 更新feeds订阅源
       run: cd openwrt && ./scripts/feeds update -a
 
