@@ -9,4 +9,4 @@
 
 # echo 'src-git kenzo https://github.com/1774293824/openwrt-packages' >>feeds.conf.default
 
-# echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
+echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
