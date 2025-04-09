@@ -4,7 +4,7 @@ on:
     inputs:
       open_ssh:
         description: '是否开启SSH, 1 = 开'
-        default: '1'
+        default: '7'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
