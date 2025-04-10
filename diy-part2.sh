@@ -7,6 +7,7 @@ sed -i 's/192.168.1.1/192.168.68.1/g' package/base-files/luci2/bin/config_genera
 
 # 修改设备名称
 sed -i 's/OpenWrt/OWrt/g' package/base-files/files/bin/config_generate
+sed -i 's/LibWrt/OWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/OWrt/g' package/base-files/luci2/bin/config_generate
 
 # 更新为root用户的默认密码为【admin】
