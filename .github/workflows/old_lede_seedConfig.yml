@@ -6,9 +6,10 @@ on:
         description: '是否开启SSH, 1 = 开'
         default: '7'
 
-#         git checkout fac34a2dfe4e416c3d09e060503c671c9e8efe30 （2024-09-30）
-#         git checkout 36c00a420926fa06a0d02d52badfbb5fd43e1762 （2025-02-18）
-#         c35bad328703cae4268f1df6290cd86ebfa1bbe8
+#  fac34a2dfe4e416c3d09e060503c671c9e8efe30 （2024-09-30）
+#  36c00a420926fa06a0d02d52badfbb5fd43e1762 （2025-02-18）
+#  c35bad328703cae4268f1df6290cd86ebfa1bbe8
+#  7ea44fc419be2475a07e6e737d97cd44c5c3bf3d  （提交于 2024 年 6 月 28 日）
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   CONFIG_FILE: .config
@@ -50,7 +51,7 @@ jobs:
       run: |
         chmod +x $DIY_P1_SH
         cd openwrt
-        git checkout c35bad328703cae4268f1df6290cd86ebfa1bbe8
+        git checkout 7ea44fc419be2475a07e6e737d97cd44c5c3bf3d
         $GITHUB_WORKSPACE/$DIY_P1_SH
            
     - name: 更新feeds订阅源
