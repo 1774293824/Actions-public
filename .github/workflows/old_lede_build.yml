@@ -78,13 +78,14 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$DIY_P3_SH
-    
-    - name: Start SSH via tmate
+
+    - name: 使用SSH连接
+      if: ${{ github.event.inputs.open_ssh == '1' && !cancelled() }}
       uses: P3TERX/ssh2actions@main
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        
+
     - name: 下载 dl 库
       id: package
       run: |
