@@ -9,11 +9,11 @@ mkdir -p files/etc/openclash/core
 # CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/mihomo-linux-arm64-v1.19.0.gz"
 # wget -qO- $CLASH_META_URL | gunzip -c > files/etc/openclash/core/clash_meta
 
-# CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/clash-linux-arm64.tar.gz"
-# wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
-
-CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/clash-linux-amd64.tar.gz"
+CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/clash-linux-arm64.tar.gz"
 wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
+
+# CLASH_META_URL="https://github.com/1774293824/Github_files/releases/download/backup_files/clash-linux-amd64.tar.gz"
+# wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
 
 
 chmod +x files/etc/openclash/core/clash*
