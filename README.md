@@ -1,3 +1,4 @@
+# SSH中设置代理
 ```
 export https_proxy=http://192.168.1.1:7890
 ```
