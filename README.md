@@ -1,8 +1,5 @@
 ```
-export https_proxy=http://10.140.116.180:7890
-```
-```
-export https_proxy=http://192.168.1.173:7890
+export https_proxy=http://192.168.1.1:7890
 ```
 1. 支持定制wan口ip
 2. 支持定制设备名称
