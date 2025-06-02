@@ -11,14 +11,14 @@
 [ -f package/base-files/luci2/bin/config_generate ] && sed -i 's/LEDE/OWrt/g' package/base-files/luci2/bin/config_generate
 
 # 更新为root用户的默认密码为【admin】
-[ -f package/base-files/files/etc/shadow ] && sed -i 's|root:::0:99999:7:::|root:$1$ZrdSUj0o$MjkG92YkikpJJ4LHXI8uT1:20013:0:99999:7:::|g' package/base-files/files/etc/shadow
+# [ -f package/base-files/files/etc/shadow ] && sed -i 's|root:::0:99999:7:::|root:$1$ZrdSUj0o$MjkG92YkikpJJ4LHXI8uT1:20013:0:99999:7:::|g' package/base-files/files/etc/shadow
 # 可选密码
 # root:$1$ZrdSUj0o$MjkG92YkikpJJ4LHXI8uT1:20013:0:99999:7:::【admin】
 # root:$1$d.4wFNEh$eGr/CydIez04zsnfDdqPa0:20013:0:99999:7:::【root】
 
-# # 设置wifi加密方式为psk2+ccmp,wifi密码为88888889
+# # 设置wifi加密方式为psk2+ccmp,wifi密码为39393939
 [ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i 's/encryption=none/encryption=psk2+ccmp/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-[ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wireless.default_radio${devidx}.key=88888889' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+[ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wireless.default_radio${devidx}.key=39393939' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 设置无线的国家代码为CN,wifi的默认功率为20
 [ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i 's/country=US/country=CN/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
