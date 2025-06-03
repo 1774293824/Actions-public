@@ -47,13 +47,20 @@ jobs:
         cd openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-    - name: 加载自定义订阅源
+    - name: 加载自定义订阅源 # git checkout 7ea44fc419be2475a07e6e737d97cd44c5c3bf3d
       run: |
         chmod +x $DIY_P1_SH
         cd openwrt
-        git checkout 7ea44fc419be2475a07e6e737d97cd44c5c3bf3d
+
         $GITHUB_WORKSPACE/$DIY_P1_SH
-           
+
+    - name: 使用SSH连接
+      if: ${{ github.event.inputs.open_ssh == '1' && !cancelled() }}
+      uses: P3TERX/ssh2actions@main
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
     - name: 更新feeds订阅源
       run: cd openwrt && ./scripts/feeds update -a
 
@@ -61,13 +68,6 @@ jobs:
       run: |
         cd openwrt && ./scripts/feeds install -a
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
-      
-    - name: 使用SSH连接
-      if: ${{ github.event.inputs.open_ssh == '1' && !cancelled() }}
-      uses: P3TERX/ssh2actions@main
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
     
     - name: 生成seed.config文件
       run: |
