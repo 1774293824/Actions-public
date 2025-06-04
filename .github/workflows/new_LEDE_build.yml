@@ -5,10 +5,10 @@ on:
       release_notes:
         description: '此处输入release发行说明:'
         default: '用户未填写'
-
 # coolsnowwolf
+# 1774293824
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/1774293824/lede
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
@@ -70,6 +70,7 @@ jobs:
 #   env:
 #     TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 #     TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
     - name: 加载自定义配置的.sh文件
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
