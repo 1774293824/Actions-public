@@ -5,6 +5,10 @@ on:
       release_notes:
         description: '此处输入release发行说明:'
         default: '用户未填写'
+      open_ssh:
+        description: '是否开启SSH, 1 = 开'
+        default: '7'
+
 # coolsnowwolf
 # 1774293824
 env:
@@ -65,7 +69,8 @@ jobs:
     - name: 安装feeds订阅源
       run: cd openwrt && ./scripts/feeds install -a
       
-    - name: Start SSH via tmate
+    - name: 使用SSH连接
+      if: ${{ github.event.inputs.open_ssh == '1' && !cancelled() }}
       uses: P3TERX/ssh2actions@main
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
