@@ -10,7 +10,8 @@
 [ -f package/base-files/files/bin/config_generate ] && sed -i 's/LibWrt/OWrt/g' package/base-files/files/bin/config_generate
 [ -f package/base-files/luci2/bin/config_generate ] && sed -i 's/LEDE/OWrt/g' package/base-files/luci2/bin/config_generate
 
-# # 设置wifi加密方式为psk2+ccmp,wifi密码为39393939
+# 设置wifi的名称为Pokemon, 加密方式为psk2+ccmp, wifi密码为39393939
+[ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i 's/LEDE/Pokemon/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 [ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i 's/encryption=none/encryption=psk2+ccmp/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 [ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wireless.default_radio${devidx}.key=39393939' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
@@ -19,7 +20,7 @@
 [ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i '/set wireless.radio${devidx}.disabled=0/a\\t\t\tset wireless.radio${devidx}.txpower=20' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 设置5Gwifi名为JDC，设置LED为蓝色关闭，绿色开启
-sed -i "/uci commit luci/a uci set wireless.default_radio0.ssid='JDC'\nuci commit wireless\nwifi reload" package/lean/default-settings/files/zzz-default-settings
+# sed -i "/uci commit luci/a uci set wireless.default_radio0.ssid='JDC'\nuci commit wireless\nwifi reload" package/lean/default-settings/files/zzz-default-settings
 # sed -i "/delete system.ntp.server/i\\\tset system.cfg048bba=led\n\\tset system.cfg048bba.default=0\n\\tset system.cfg048bba.name=Blue\n\\tset system.cfg048bba.sysfs=blue:status\n\\tset system.cfg048bba.trigger=none" package/lean/default-settings/files/zzz-default-settings
 # sed -i "/delete system.ntp.server/i\\\tset system.cfg038bba=led\n\\tset system.cfg038bba.default=1\n\\tset system.cfg038bba.name=Green\n\\tset system.cfg038bba.sysfs=green:status\n\\tset system.cfg038bba.trigger=none" package/lean/default-settings/files/zzz-default-settings
 
