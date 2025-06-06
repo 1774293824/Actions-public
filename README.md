@@ -11,14 +11,14 @@ export https_proxy=http://192.168.1.1:7890
       - diy-part1.sh中可以添加feeds插件源
       - diy-part2.sh中可以添加自定义的命令，用于修改wan口ip、设备名称、默认密码、wifi密码等配置
       - diy-part3.sh中针对openclash来使用，可以为openclash编译时带上内核文件
-### 特性
+### 注意
 - 修改默认联网方式仅需要修改diy2.sh中内容即可
 - 配置其他型号，仅需要修改.config即可
-   3. diy-part3.sh中的脚本的作用是：编译带openclash的固件时，自动带上meta内核。如果没有选择openclash编译，则请把diy3中内容全部注释
-   4. 如果要选择nikki插件，需要先配置：
-      1、使用luci_23.05
-      2、“Base system”中选择“firewall4”
-      3、“Network-Firewall”中选择“iptables-mod-conntrack-extra”和“iptables-mod-fullconenat”
+- diy-part3.sh中的脚本的作用是：编译带openclash的固件时，自动带上meta内核。如果没有选择openclash编译，则请把diy3中内容全部注释
+- 如果要选择nikki插件，需要先配置：
+      - 使用luci_23.05
+      - “Base system”中选择“firewall4”
+      - “Network-Firewall”中选择“iptables-mod-conntrack-extra”和“iptables-mod-fullconenat”
 # wifi按如下配置，速率有明显提升
 1. QCA
    - 地区CN
