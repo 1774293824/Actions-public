@@ -7,7 +7,6 @@
 
 # 修改设备名称
 [ -f package/base-files/files/bin/config_generate ] && sed -i 's/OpenWrt/OWrt/g' package/base-files/files/bin/config_generate
-[ -f package/base-files/files/bin/config_generate ] && sed -i 's/LibWrt/OWrt/g' package/base-files/files/bin/config_generate
 [ -f package/base-files/luci2/bin/config_generate ] && sed -i 's/LEDE/OWrt/g' package/base-files/luci2/bin/config_generate
 
 # 设置wifi的名称为Pokemon, 加密方式为psk2+ccmp, wifi密码为39393939
