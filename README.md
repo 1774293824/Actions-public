@@ -11,9 +11,9 @@ export https_proxy=http://192.168.1.1:7890
       - diy-part1.sh中可以添加feeds插件源
       - diy-part2.sh中可以添加自定义的命令，用于修改wan口ip、设备名称、默认密码、wifi密码等配置
       - diy-part3.sh中针对openclash来使用，可以为openclash编译时带上内核文件
-   # 注意
-   -修改默认联网方式仅需要修改diy2.sh中内容即可
-   -配置其他型号，仅需要修改.config即可
+### 特性
+- 修改默认联网方式仅需要修改diy2.sh中内容即可
+- 配置其他型号，仅需要修改.config即可
    3. diy-part3.sh中的脚本的作用是：编译带openclash的固件时，自动带上meta内核。如果没有选择openclash编译，则请把diy3中内容全部注释
    4. 如果要选择nikki插件，需要先配置：
       1、使用luci_23.05
