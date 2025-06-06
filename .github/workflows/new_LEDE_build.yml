@@ -76,20 +76,20 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-# - name: 加载自定义配置的.sh文件
-#   run: |
-#     [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-#     chmod +x $DIY_P2_SH
-#     chmod +x $DIY_P3_SH
-#     cd openwrt
-#     $GITHUB_WORKSPACE/$DIY_P2_SH
-    
-#     if grep -q "CONFIG_PACKAGE_luci-app-openclash=y" .config; then
-#       echo "检测到配置包含 openclash，执行 diy-part3.sh"
-#       $GITHUB_WORKSPACE/$DIY_P3_SH
-#     else
-#       echo "未检测到 openclash 配置，跳过 diy-part3.sh"
-#     fi
+    - name: 加载自定义配置的.sh文件
+      run: |
+        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        chmod +x $DIY_P2_SH
+        chmod +x $DIY_P3_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P2_SH
+        
+        if grep -q "CONFIG_PACKAGE_luci-app-openclash=y" .config; then
+          echo "检测到配置包含 openclash，执行 diy-part3.sh"
+          $GITHUB_WORKSPACE/$DIY_P3_SH
+        else
+          echo "未检测到 openclash 配置，跳过 diy-part3.sh"
+        fi
 
     - name: 下载 dl 库
       id: package
