@@ -9,10 +9,10 @@
 [ -f package/base-files/files/bin/config_generate ] && sed -i 's/OpenWrt/OWrt/g' package/base-files/files/bin/config_generate
 [ -f package/base-files/luci2/bin/config_generate ] && sed -i 's/LEDE/OWrt/g' package/base-files/luci2/bin/config_generate
 
-# 设置wifi的名称为Pokemon, 加密方式为psk2+ccmp, wifi密码为39393939
+# 设置wifi的名称为Pokemon, 加密方式为psk2, wifi密码为39393939
 [ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i 's/LEDE/Pokemon/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-[ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i 's/encryption=none/encryption=psk2+ccmp/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-[ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i '/set wireless.default_radio${devidx}.encryption=psk2+ccmp/a\\t\t\tset wireless.default_radio${devidx}.key=39393939' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+[ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+[ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i '/set wireless.default_radio${devidx}.encryption=psk2/a\\t\t\tset wireless.default_radio${devidx}.key=39393939' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 设置无线的国家代码为CN,wifi的默认功率为20
 [ -f package/kernel/mac80211/files/lib/wifi/mac80211.sh ] && sed -i 's/country=US/country=CN/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
