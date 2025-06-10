@@ -1,4 +1,4 @@
-name: 编译lede源码(最新代码)
+name: 编译luci-18.05
 on:
   workflow_dispatch:
     inputs:
