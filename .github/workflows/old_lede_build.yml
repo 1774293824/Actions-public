@@ -1,4 +1,4 @@
-name: 编译lede源码(指定基线)
+name: 编译18.05-lede源码(指定基线)
 on:
   workflow_dispatch:
     inputs:
