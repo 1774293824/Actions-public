@@ -9,10 +9,10 @@ on:
         description: '是否开启SSH, 1 = 开'
         default: '7'
 
+#  7ea44fc419be2475a07e6e737d97cd44c5c3bf3d （2024-06-28）
+#  c35bad328703cae4268f1df6290cd86ebfa1bbe8 （2024-08-14）
 #  fac34a2dfe4e416c3d09e060503c671c9e8efe30 （2024-09-30）
 #  36c00a420926fa06a0d02d52badfbb5fd43e1762 （2025-02-18）
-#  c35bad328703cae4268f1df6290cd86ebfa1bbe8
-#  7ea44fc419be2475a07e6e737d97cd44c5c3bf3d  （提交于 2024 年 6 月 28 日）
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
