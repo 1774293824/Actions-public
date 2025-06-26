@@ -1,4 +1,4 @@
-name: 编译luci-18.05
+name: 编译luci最新代码
 on:
   workflow_dispatch:
     inputs:
